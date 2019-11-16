@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project kubernetes-fibo
   - gcloud config set compute/zone asia-south1-a
-  - gcloud conatiner clusters get-credentials fibo-cluster
+  - gcloud conatiner clusters get-credentials kubernetes-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t ret83/client-test -f ./client/Dockerfile.dev ./client
 
